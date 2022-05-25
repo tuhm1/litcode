@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.3/dist/darkly/bootstrap.min.css"
+        integrity="sha256-VZi/r/RC1MritcGE2Yyxb/ACi8WIOj1Y7BHuslF8+6I=" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</head>
+
+<body style="max-width: 700px; width: 100%; margin: auto;">
+    {{template "nav.html" .}}
+    <div class="p-2">
+        <h1>Create Test</h1>
+        <form action="/tests/create/{{.problem.ID}}" method="post">
+            <div class="row mb-3 align-items-center">
+                <label for="problem" class="col-form-label col-sm-3">Problem</label>
+                <div class="col-sm-9">
+                    <a href="/problems/edit/{{.problem.ID}}">{{.problem.Name}}</a>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="name" class="col-form-control col-sm-3">Name</label>
+                <div class="col-sm-9">
+                    <input name="name" required type="text" id="name" class="form-control" />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="input">Input</label>
+                <textarea name="input" required id="input" class="form-control"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="answer">Answer</label>
+                <textarea name="answer" required id="answer" class="form-control"></textarea>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

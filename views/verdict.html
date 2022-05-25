@@ -1,0 +1,7 @@
+{{$color := "success"}}
+{{if ne . "accepted"}}
+    {{$color = "danger"}}
+{{end}}
+<span class="badge bg-{{$color}} text-uppercase">
+    {{.}}
+</span>
